@@ -1,0 +1,158 @@
+@import "colours";
+@import "sizes";
+
+//Basic styles
+a, a:hover, a:active, a:visited{
+    text-decoration: none;
+    color: @dark-gray;
+    transition: color 0.5s;
+}
+a:hover{
+    color: @dark-blue;
+}
+hr{
+    margin-bottom: 32px;
+    background: #ddd;
+    border: 0;
+    color: #ddd;
+    height: 1px;
+}
+p{
+    line-height: 1.4em;
+}
+.muted, footer{
+    color: @med-gray;
+}
+footer{
+    margin-top: 128px;
+    font-size: 12px;
+}
+//End basic styles
+
+//Start navbar
+.navbar{
+    background: @white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+}
+.navbar a, .navbar a:hover{
+    text-align: center;
+    color: @med-gray;
+    padding: 10px 0;
+    margin-bottom: 2px;
+    transition: color 0.3s ease;
+}
+.navbar a:hover, .navbar a.active{
+    margin-bottom: 0;
+    color: @black;
+}
+.nav-logo:hover, .nav-logo.active{
+    border-bottom: 2px solid @dark-blue;
+}
+.nav-course:hover, .nav-course.active{
+    border-bottom: 2px solid @green;
+}
+.nav-canvas:hover, .nav-canvas.active{
+    border-bottom: 2px solid @red;
+}
+.nav-contact:hover, .nav-contact.active{
+    border-bottom: 2px solid @purple;
+}
+.nav-access:hover, .nav-access.active{
+    border-bottom: 2px solid @gold;
+}
+@media (max-width: @size-sm){
+    .navbar{
+        position: relative;
+    }
+    .content{
+        margin-top: 16px;
+    }
+}
+//End navbar
+
+//Start content
+.content{
+    margin-top: 54px;
+}
+.card{
+    padding: 16px;
+    margin: 10px;
+    background: @not-there-gray;
+    border-bottom: 3px solid @dark-blue;
+    -webkit-box-shadow: 0 1px 3px darken(@light-gray, 10%);
+    -moz-box-shadow: 0 1px 3px darken(@light-gray, 10%);
+    box-shadow: 0 1px 3px darken(@light-gray, 10%);
+    transition: border 0.5s ease;
+}
+.card:hover{
+    border-bottom: 3px solid @gold;
+}
+.card.highlightable{
+    transition: color 0.2s ease;
+}
+.card.highlightable:hover{
+    color: @med-gray;
+}
+.highlight{
+    transition: none;
+    color: @black;
+}
+.card.pic{
+    padding: 0;
+}
+.card.pic img{
+    display: block;
+    vertical-align: top;
+    width: auto;
+    height: inherit;
+    max-width: 100%;
+    margin: 0;
+}
+.card ul{
+    margin-left: 20px;
+}
+.bgimg{
+    background: url("../img/bgimg.jpg") center center;
+    background-size: cover;
+    height: 400px;
+}
+canvas#circles{
+    background: #08c;
+}
+//End Content
+
+//Start Forms
+label, input{
+    line-height: 0.9em;
+    font-size: 0.9em;
+}
+input, textarea, form button{
+    width: 100%;
+    outline: none;
+    border: 1px solid @light-gray;
+    border-radius: 2px;
+    padding: 6px;
+    margin: -4px auto 16px auto;
+    transition: border 0.5s ease, box-shadow 0.5s ease;
+}
+input:focus, textarea:focus{
+    border: 1px solid @gold;
+    box-shadow: 0 0 7px @gold;
+    -webkit-box-shadow: 0 0 7px @gold;
+    -moz-box-shadow: 0 0 7px @gold;
+}
+textarea{
+    resize: vertical;
+}
+form button{
+    background: @dark-blue;
+    border: none;
+    transition: background 0.5s ;
+}
+form button:focus, form button:hover{
+    background: @gold;
+}
+//End forms

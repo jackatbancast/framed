@@ -1,0 +1,51 @@
+@import "sizes";
+@import "colours";
+
+@base-font-size: 0.8rem;
+
+//Base navbar
+.navbar{
+    background: @white;
+    width: 100%;
+    z-index: 2000;
+}
+.navbar *{
+    color: @charcoal;
+    font-size: 2 * @base-font-size;
+    font-weight: 600;
+}
+
+//Dark Navbar
+.navbar.dark{
+    background: fade(@charcoal, 99%);
+}
+.navbar.dark *{
+    color: @white;
+}
+
+//navbark Links
+.navbar a{
+    padding: 0.3em;
+    box-shadow: 0 -0.05em 0 inset;
+    color: @charcoal;
+    transition: box-shadow 0.25s ease;
+}
+.navbar a:hover
+.navbar a:focus{
+    box-shadow: 0 -0.125em 0 inset;
+}
+
+//Fixed Navbar
+.navbar.fixed{
+    position: fixed;
+}
+
+//Brand
+.navbar a.brand{
+    color: @base;
+    box-shadow: 0 -0.05em 0 inset;
+}
+.navbar a.brand:hover,
+.navbar a.brand:focus {
+    box-shadow: 0 -0.125em 0 inset;
+}

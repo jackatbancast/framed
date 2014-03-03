@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Framed Documentation ~ @jackatbancast
+    </title>
+    <link type="text/css" rel="stylesheet" href="./framed.css" />
+    <style type="text/css">
+      html, body{
+        background: #4B0082;
+      }
+      .main-section{
+        background: #fff;
+        padding: 20px;
+        border-radius: 0 0 3px 3px;
+      }
+      footer{
+        background: #6900B2;
+        color: #fff;
+        border-top-color: #7800CC;
+      }
+    </style>
+    <script type="text/javascript" src="./highlight.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <nav class="row">
+          <a class="brand" href="./index.html">
+            Framed
+          </a>
+        </nav>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="main-section">
+            <h1>Components</h1>
+<hr />
+<h2>Grid</h2>
+<p>The grid system in use is simple to use, and follows a similar format
+to bootstrap.</p>
+<pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="row showGrid">
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+</div>
+
+<p>It is also very easy to handle overflows</p>
+<pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;     
+    &lt;div class="col-xs-12 col-sm-3"&gt;
+        .col-xs-12.col-sm-3
+    &lt;/div&gt;     
+    &lt;div class="col-xs-12 col-sm-9"&gt;
+        &lt;div class="col-xs-12 col-sm-6"&gt;
+          .col-xs-12.col-sm-3 &gt; .col-xs-12.col-sm-6
+        &lt;/div&gt;
+        &lt;div class="col-xs-12 col-sm-6"&gt;
+          .col-xs-12.col-sm-3 &gt; .col-xs-12.col-sm-6
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="row showGrid">
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>     
+    <div class="col-xs-12 col-sm-3">
+        .col-xs-12.col-sm-3
+    </div>     
+    <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-6">
+          .col-xs-12.col-sm-3 > .col-xs-12.col-sm-6
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          .col-xs-12.col-sm-3 > .col-xs-12.col-sm-6
+        </div>
+    </div>
+</div>
+
+<hr />
+<h2>Buttons</h2>
+<p>It is simple to add button in <code>Framed</code></p>
+<pre><code>&lt;a class="btn plain" href="#"&gt;Example button&lt;/a&gt;
+</code></pre>
+<ul>
+<li><a class="btn plain" href="#">plain</a></li>
+<li><a class="btn dark" href="#">dark</a></li>
+<li><a class="btn info" href="#">info</a></li>
+<li><a class="btn warn" href="#">warn</a></li>
+<li><a class="btn danger" href="#">danger</a></li>
+<li><a class="btn regal" href="#">regal</a></li>
+</ul>
+<p>It is also possible to modify the size of buttons by typography modifiers
+like <code>sm</code>, <code>md</code>, <code>lg</code> and <code>xl</code>.</p>
+<ul>
+<li><a class="btn plain sm" href="#">sm</a></li>
+<li><a class="btn plain md" href="#">md</a></li>
+<li><a class="btn plain lg" href="#">lg</a></li>
+<li><a class="btn plain xl" href="#">xl</a></li>
+</ul>
+<hr />
+<h2>Forms</h2>
+<p>Forms are as simple to add as they are usually, form styles have been
+overridden</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container sm">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <ol class="np-col">
+            <li>
+              Jack Stephenson &copy; 2014
+            </li>
+            <li>
+              CC-BY-SA 4.0
+            </li>
+          </ol>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <ol class="np-col">
+            <li>
+              Framed.css
+            </li>
+            <li>
+              Generated using markdown
+            </li>
+          </ol>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <ol class="np-col">
+            <li>
+              <a href="//jack.bancast.net">
+                jack.bancast.net
+              </a>
+            </li>
+            <li>
+              <a href="//github.com/jackatbancast/framed">
+                github.com/jackatbancast/framed
+              </a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+@import "colours";
+@import "mixins";
+
+.bg-font-color(@background: @white) when (lightness(@background) >= 75%) {
+    color: @charcoal;
+}
+
+.bg-font-color(@background: @white) when (lightness(@background) < 75%) {
+    color: @white;
+}
+
+.bg-border-color(@background: @white) when (lightness(@background) >= 75%) {
+    border-color: darken(@color, 5%);
+}
+
+.bg-border-color(@background: @white) when (lightness(@background) < 75%) {
+    border: none;
+    padding: 0.4em 1.1em;
+}
+
+.btnGen(@name, @color:@white){
+    .btn.@{name} {
+        background: @color;
+        .bg-border-color(@color);
+        .bg-font-color(@color);
+    }
+    .btn.@{name}:hover{
+        background: darken(@color, 5%);
+    }
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.2em 0.9em;
+    border-radius: 0.25em;
+    margin: 0.2em;
+    font-weight: 500;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 0.1em;
+    font-size: inherit;
+}
+
+.btnGen(plain, @white);
+.btnGen(dark, @charcoal);
+.btnGen(info, @info);
+.btnGen(warn, @warn);
+.btnGen(danger, @red);
+.btnGen(regal, @purple);

@@ -1,0 +1,151 @@
+@import "sizes";
+
+@testing: false;
+@columns: 12;
+
+//TESTING
+.showGrid(@color) when (@testing = true) {
+    background: fade(@color, 15%);
+    border: 1px solid fade(darken(@color, 10%), 15%);
+}
+
+[class^="col-"]{
+    .showGrid(@blue);
+}
+.row{
+    .showGrid(@gold);
+}
+
+.showGrid,
+.showGrid .row,
+.showGrid [class^="col-"]{
+    background: fade(@blue, 15%);
+    border: 1px solid fade(darken(@blue, 10%), 15%);
+    font-size: 0.8rem;
+}
+//END TESTING
+
+.fill {
+    width: 100%;
+    margin:0;
+}
+
+.row{
+    width: @size-sm;
+    margin-bottom: 32px;
+}
+.row .row{
+    width: 100%;
+}
+.row:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.container, .center{
+    width: 100%;
+    text-align: center;
+}
+.container>*{
+    text-align: left;
+    margin: auto;
+}
+
+.row *{
+    float: none;
+}
+
+[class^="col-"],
+.row>*{
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.loopWidth(@index, @prefix) when (@index < (@columns + 1)) {
+    .col-@{prefix}-@{index} {
+        width: ((100% / @columns) * @index);
+    }
+
+    .loopWidth(@index + 1, @prefix);
+}
+.loopPull(@index, @prefix) when (@index < (@columns + 1)) {
+    .col-@{prefix}-pull-@{index} {
+        right: ((100% / @columns) * @index);
+    }
+
+    .loopPull(@index + 1, @prefix);
+}
+.loopPush(@index, @prefix) when (@index < (@columns + 1)) {
+    .col-@{prefix}-push-@{index} {
+        left: ((100% / @columns) * @index);
+    }
+
+    .loopPush(@index + 1, @prefix);
+}
+.loopOffset(@index, @prefix) when (@index < (@columns + 1)) {
+    .col-@{prefix}-offset-@{index} {
+        margin-left: ((100% / @columns) * @index);
+    }
+
+    .loopOffset(@index + 1, @prefix);
+}
+.pullRight(@prefix) {
+    .col-@{prefix}-pull-right {
+        float: right;
+    }
+}
+
+.gridSize(@prefix){
+    .loopWidth(1, @prefix);
+    .loopPull(1, @prefix);
+    .loopPush(1, @prefix);
+    .loopOffset(1, @prefix);
+    .pullRight(@prefix);
+}
+
+.centerClass (@prefix) {
+    .center-@{prefix} {
+        text-align: center;
+    }
+}
+
+.gridSize(xs);
+
+@media (max-width: @size-sm){
+    .row{
+        width: 100%;
+    }
+    .centerClass(xs);
+}
+@media (min-width: @size-sm){
+    .modal{
+        width: @size-sm - 64;
+    }
+    .row{
+        width: @size-sm - 64;
+    }
+    .gridSize(sm);
+    .centerClass(sm);
+}
+@media (min-width: @size-md){
+    .modal{
+        width: @size-sm;
+    }
+    .row{
+        width: @size-md - 64;
+    }
+    .gridSize(md);
+    .centerClass(md);
+}
+@media (min-width: @size-lg) {
+    .modal{
+        width: @size-md;
+    }
+    .row{
+        width: @size-md + 200;
+    }
+    .gridSize(lg);
+    .centerClass(lg);
+}
